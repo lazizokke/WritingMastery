@@ -4,129 +4,162 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Writing Mastery — Multilevel Writing Kursi</title>
-  <meta name="description" content="✍️ Writing Mastery — Multilevel imtihoni uchun mukammal yozuv kursi
-Bu kurs sizni letter va esse yozishda yuqori darajaga olib chiqadi. Darslar Telegram orqali onlayn tarzda olib boriladi va tajribali, darajasi baland ustozlar tomonidan o‘tiladi. Har bir mashg‘ulotda siz:
+  <meta name="description" content="✍️ Writing Mastery — Multilevel imtihoni uchun mukammal yozuv kursi. Letter va esse yozishni o‘rganing, ustozlardan feedback oling va yuqori natijaga erishing.">
+  <meta name="keywords" content="writing kursi, multilevel, esse yozish, letter yozish, ingliz tili imtihoni, telegram kurs">
+  <meta property="og:title" content="Writing Mastery — Multilevel Writing Kursi">
+  <meta property="og:description" content="Esse va letter yozishni mukammal darajada o‘rganing. Multilevel imtihoniga tayyorlaning.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
 
-Imtihon talablariga mos letter va esse tuzilmasini o‘rganasiz
+  <!-- Ikonlar uchun -->
+  <script src="https://kit.fontawesome.com/a2e0c7f6df.js" crossorigin="anonymous"></script>
 
-O‘zingiz yozgan matnlaringizga feedback olasiz
-
-Yozish tezligi va uslubingizni mukammallashtirasiz
-
-📚 Kursga qo‘shilish orqali siz:
-✅ Har haftalik topshiriqlarni bajarib, amaliy tajribaga ega bo‘lasiz
-✅ Imtihon paytida fikringizni ravon, mantiqiy va grammatik to‘g‘ri ifodalay olasiz
-✅ O‘zingizga ishonch hosil qilasiz va yuqori natijaga erishasiz
-
-💳 Narxi: oyiga 50 000 so‘m
-🚀 Bugunoq qo‘shiling va writing bo‘yicha mukammallikka ilk qadam qo‘ying!" />
   <style>
-    :root { --bg:#0b1020; --card:#121833; --text:#e8ebff; --muted:#a4adda; --accent:#6c8cff; --ring:rgba(140,180,255,.35); }
+    :root { --bg:#0b1020; --card:#121833; --text:#e8ebff; --muted:#a4adda; --accent:#6c8cff; }
     *{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
     .container{width:min(1080px,92%);margin:0 auto}
 
-    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient(to bottom,rgba(11,16,32,.9),rgba(11,16,32,.5));border-bottom:1px solid rgba(255,255,255,.06)}
+    /* Navbar */
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(8px);background:rgba(11,16,32,.9);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8ef6d0);box-shadow:0 10px 30px rgba(108,140,255,.35)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:800;background:linear-gradient(135deg,var(--accent),#4c66ff);color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(76,102,255,.35), inset 0 0 0 1px rgba(255,255,255,.06);transition:transform .12s ease, box-shadow .2s ease, filter .2s ease}
-    .btn:hover{transform:translateY(-1px);filter:saturate(115%);box-shadow:0 12px 38px rgba(76,102,255,.45)}
+    .brand .logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8ef6d0)}
+    .btn{display:inline-flex;align-items:center;padding:12px 18px;border-radius:14px;font-weight:700;background:linear-gradient(135deg,var(--accent),#4c66ff);color:#fff;border:none;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
 
-    .hero{padding:18px 0 40px}
-    .carousel{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);background:#0f1530}
+    /* Hero */
+    .hero{padding:20px 0 40px}
+    .carousel{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
     .carousel-viewport{position:relative;width:100%;padding-top:56.25%;overflow:hidden}
     .slides{position:absolute;inset:0;display:flex;width:400%;height:100%;animation:slide 20s infinite}
     .slide{flex:0 0 25%;position:relative}
     .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    @keyframes slide{0%{transform:translateX(0%)}20%{transform:translateX(0%)}25%{transform:translateX(-25%)}45%{transform:translateX(-25%)}50%{transform:translateX(-50%)}70%{transform:translateX(-50%)}75%{transform:translateX(-75%)}95%{transform:translateX(-75%)}100%{transform:translateX(0%)}}
-    .dots{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:8px}
-    .dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.6)}
+    @keyframes slide{
+      0%,20%{transform:translateX(0)}
+      25%,45%{transform:translateX(-25%)}
+      50%,70%{transform:translateX(-50%)}
+      75%,95%{transform:translateX(-75%)}
+      100%{transform:translateX(0)}
+    }
 
-    .title{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:18px 0 6px;text-align:center;letter-spacing:-.3px}
-    .subtitle{font-size:clamp(16px,2.4vw,18px);color:var(--muted);text-align:center;max-width:860px;margin:0 auto 22px}
+    .title{font-size:clamp(32px,6vw,56px);margin:20px 0 10px;text-align:center}
+    .subtitle{font-size:18px;color:var(--muted);text-align:center;max-width:800px;margin:0 auto 24px}
     .center{display:flex;justify-content:center}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:22px;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+    .card{background:rgba(255,255,255,.03);border-radius:18px;padding:20px;margin-top:28px}
 
+    /* Sharhlar */
     .reviews{padding:50px 0}
-    .reviews h2{text-align:center;font-size:clamp(24px,4vw,34px);margin-bottom:24px}
+    .reviews h2{text-align:center;font-size:28px;margin-bottom:24px}
     .review-cards{display:grid;gap:16px}
     @media(min-width:760px){.review-cards{grid-template-columns:repeat(3,1fr)}}
-    .review{padding:20px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);box-shadow:0 6px 20px rgba(0,0,0,.25)}
-    .review p{color:var(--muted);font-size:15px;line-height:1.6}
+    .review{padding:18px;border-radius:16px;background:rgba(255,255,255,.03)}
+    .review p{color:var(--muted);font-size:15px}
     .review b{display:block;margin-top:10px;color:var(--text)}
 
-    .footer{padding:36px 0;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+    /* Qo'shimcha */
+    .info{padding:50px 0}
+    .info h2{text-align:center;font-size:28px;margin-bottom:18px}
+    .info p{text-align:center;max-width:700px;margin:0 auto;color:var(--muted)}
+
+    /* FAQ */
+    .faq{padding:60px 0}
+    .faq h2{text-align:center;font-size:28px;margin-bottom:20px}
+    details{background:rgba(255,255,255,.03);padding:14px 18px;border-radius:14px;margin-bottom:12px;cursor:pointer;border:1px solid rgba(255,255,255,.08)}
+    summary{font-weight:600;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details[open]{background:rgba(255,255,255,.06)}
+
+    /* Footer */
+    .footer{padding:30px 0;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#">
-        <span class="logo"></span>
-        <span>Writing Mastery</span>
-      </a>
+      <a class="brand" href="#"><span class="logo"></span><span>Writing Mastery</span></a>
       <a class="btn" href="https://t.me/very_busi">Guruhga qo'shilish</a>
     </div>
   </header>
 
   <main class="hero">
     <div class="container">
+      <!-- Carousel -->
       <section class="carousel">
         <div class="carousel-viewport">
           <div class="slides">
-            <div class="slide"><<img src="https://static.instatext.io/prod/uploads/2024/10/03151201/instatext_m1i1j5xx.jpg" alt="Yozish darsi"></div>
-            <div class="slide"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1500&auto=format&fit=crop" alt="Ese tuzilmasi"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=1500&auto=format&fit=crop" alt="Yozish darsi"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1500&auto=format&fit=crop" alt="Esse tuzilmasi"></div>
             <div class="slide"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1500&auto=format&fit=crop" alt="Ustozlar"></div>
             <div class="slide"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1500&auto=format&fit=crop" alt="Telegramdagi dars"></div>
           </div>
-          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
       </section>
 
+      <!-- Hero text -->
       <h1 class="title">Writing Mastery</h1>
-      <p class="subtitle"><b>Multilevel imtihoni</b> uchun <b>mukammal letter</b> va <b>esse</b> yozishni bosqichma-bosqich o'rgatamiz. Darslar <b>Telegram</b> orqali o'tiladi, <b>darajasi baland ustozlar</b> dars beradi. Boshlanishi — oyiga <b>50 000 so'mdan</b>.</p>
+      <p class="subtitle">📚 <b>Multilevel imtihoni</b> uchun <b>letter</b> va <b>esse</b> yozishni mukammal o‘rganing. <br> Darslar <b>Telegram</b> orqali o‘tiladi, <b>tajribali ustozlar</b> dars beradi. Narxi: oyiga <b>50 000 so‘m</b>. 🚀</p>
       <div class="center" id="join">
-        <a class="btn" href="https://t.me/very_busi">Guruhga qo'shilish</a>
+        <a class="btn" href="https://t.me/very_busi"><i class="fa-brands fa-telegram"></i> Guruhga qo'shilish</a>
       </div>
-      <div style="margin-top:28px" class="card">
+
+      <!-- Afzalliklar -->
+      <div class="card">
         <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.7">
-          <li>Real imtihon talablari asosida darslar</li>
-          <li>Andozalar: kirish, asosiy qism, xulosa — har bir qadamda namuna va har kunlik videochatlar</li>
-          <li>Haftalik yozma topshiriqlar va feedback</li>
+          <li>✍️ Real imtihon talablari asosida darslar</li>
+          <li>📑 Letter va esse uchun tayyor andozalar</li>
+          <li>✅ Haftalik yozma topshiriqlar va feedback</li>
         </ul>
       </div>
     </div>
   </main>
 
-  <!-- Sharhlar bo'limi -->
+  <!-- Sharhlar -->
   <section class="reviews">
     <div class="container">
       <h2>O'quvchilarimiz fikrlari</h2>
       <div class="review-cards">
-        <div class="review">
-          <p>"Kurs juda foydali bo'ldi. Esse yozishda xatolarimni bilib oldim va to'g'irlashni o'rgandim."</p>
-          <b>— Oddiy bola</b>
-        </div>
-        <div class="review">
-          <p>"Telegramda darslar qulay, ustozlar tezda javob berishadi. Multilevel imtihonida writingdan yuqori ball oldim."</p>
-          <b>— Aziza</b>
-        </div>
-        <div class="review">
-          <p>"Juda foydali va ancha tekin"</p>
-          <b>— Saidahmedov Sardor</b>
-        </div>
+        <div class="review"><p>"Kurs juda foydali bo'ldi. Esse yozishda xatolarimni to‘g‘rilashni o‘rgandim."</p><b>— Oddiy bola</b></div>
+        <div class="review"><p>"Telegramda darslar qulay, ustozlar tez javob berishadi. Imtihonda writingdan yuqori ball oldim."</p><b>— Aziza</b></div>
+        <div class="review"><p>"Narxiga nisbatan juda foydali, amaliy topshiriqlar ko‘p."</p><b>— Sardor</b></div>
       </div>
     </div>
   </section>
 
+  <!-- Qo'shimcha ma'lumot -->
+  <section class="info">
+    <div class="container">
+      <h2>Nega Writing Mastery?</h2>
+      <p>Bu kurs orqali siz yozish tezligingizni oshirasiz, insho va maktub yozishda ishonch hosil qilasiz va Multilevel imtihonida yuqori natijaga erishasiz. 🌟</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Ko‘p so‘raladigan savollar</h2>
+      <details>
+        <summary>Kurs qancha davom etadi?</summary>
+        <p>Multilevel bo'yicha kurs 2 oy davom etiladi va IELTSga o'tiladi.</p>
+      </details>
+      <details>
+        <summary>Darslar qayerda bo‘ladi?</summary>
+        <p>Barcha mashg‘ulotlar Telegram platformasida o‘tkaziladi.</p>
+      </details>
+      <details>
+        <summary>To‘lov qanday amalga oshiriladi?</summary>
+        <p>To‘lov kartaga o‘tkaziladi, batafsil ma’lumot guruhga qo‘shilgach beriladi.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">© <span id="yil"></span> Writing Mastery. Barcha huquqlar himoyalangan.</div>
   </footer>
 
-  <script>
-    document.getElementById('yil').textContent=new Date().getFullYear();
-  </script>
+  <script>document.getElementById('yil').textContent=new Date().getFullYear();</script>
 </body>
 </html>
