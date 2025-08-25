@@ -129,9 +129,9 @@
     <div class="container">
       <h2>O'quvchilarimiz fikrlari</h2>
       <div class="review-cards">
-        <div class="review"><p>"Kurs juda foydali bo'ldi. Esse yozishda xatolarimni to‘g‘rilashni o‘rgandim."</p><b>— Oddiy bola</b></div>
-        <div class="review"><p>"Telegramda darslar qulay, ustozlar tez javob berishadi. Imtihonda writingdan yuqori ball oldim."</p><b>— Aziza</b></div>
-        <div class="review"><p>"Narxiga nisbatan juda foydali, amaliy topshiriqlar ko‘p."</p><b>— Sardor</b></div>
+        <div class="review"><p>"Men 2 oy ichida writingni o'rganib oldm ham arzon ekan"</p><b>— Oddiy bola</b></div>
+        <div class="review"><p>"Telegramda dars o'rganish qulay ekan. Juda oson bo'ldi"</p><b>— Aziza</b></div>
+        <div class="review"><p>"Menga yoqdi"</p><b>— Sardor</b></div>
       </div>
     </div>
   </section>
@@ -156,47 +156,56 @@
   </section>
 
   <!-- Chegirma olish -->
-  <section id="discount" class="info">
-    <div class="container">
-      <h2>🎁 Chegirma olish</h2>
-       <p>Ma'lumotni to'ldirish orqali chegirma kodini adminga jo'nating va kurs oylik to'loviga 28 foizlik chegirma oling.</p>
-      <form action="https://formspree.io/f/xpwjaedw" method="POST">
-        <label>Telefon raqamingiz (O'zbekiston):</label>
-        <input type="tel" name="phone" pattern="^\+998[0-9]{9}$" placeholder="+998901234567" required>
+<section id="discount" class="info">
+  <div class="container">
+    <h2>🎁 Chegirma olish</h2>
+    <p>Ma'lumotni to'ldirish orqali chegirma kodini adminga jo'nating va kurs oylik to'loviga 28 foizlik chegirma oling.</p>
+    
+    <!-- formga id qo‘shildi -->
+    <form id="discountForm" action="https://formspree.io/f/xpwjaedw" method="POST">
+      <label>Telefon raqamingiz (O'zbekiston):</label>
+      <input type="tel" name="phone" pattern="^\+998[0-9]{9}$" placeholder="+998901234567" required>
 
-        <label>Ism Familiya:</label>
-        <input type="text" name="fullname" required>
+      <label>Ism Familiya:</label>
+      <input type="text" name="fullname" required>
 
-        <button type="submit">Chegirma kodini olish</button>
-      </form>
+      <button type="submit">Chegirma kodini olish</button>
+    </form>
 
-      <div id="discountResult" class="result" style="display:none;">
-        <h3>✅ Sizning chegirma kodingiz: <span id="code">WM2025</span></h3>
-        <p>Kodni adminga yuboring va chegirmaga ega bo‘ling!</p>
-        <a class="btn" href="https://t.me/very_busi">Kursga kirish</a>
-      </div>
+    <div id="discountResult" class="result" style="display:none;">
+      <h3>✅ Sizning chegirma kodingiz: <span id="code">WM2025</span></h3>
+      <p>Kodni adminga yuboring va chegirmaga ega bo‘ling!</p>
+      <a class="btn" href="https://t.me/very_busi">Kursga kirish</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">© <span id="yil"></span> Writing Mastery. Barcha huquqlar himoyalangan.</div>
-  </footer>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">© <span id="yil"></span> Writing Mastery. Barcha huquqlar himoyalangan.</div>
+</footer>
 
-  <script>
-    document.getElementById('yil').textContent=new Date().getFullYear();
+<script>
+  document.getElementById('yil').textContent = new Date().getFullYear();
 
-    // Forma ishlashi
-    const form = document.getElementById('discountForm');
-    const result = document.getElementById('discountResult');
+  // Forma ishlashi va Formspree ga yuborish
+  document.getElementById("discountForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-    form.addEventListener('submit', function(e){
-      e.preventDefault(); // sahifa yangilanmasin
-      form.style.display="none";
-      result.style.display="block";
-      // ⚠️ Hozircha ma’lumotlar faqat ko‘rsatiladi,
-      // sizga emailga yuborish uchun Formspree ulash kerak bo‘ladi.
+    const form = e.target;
+    const data = new FormData(form);
+
+    const action = form.action;
+
+    await fetch(action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
     });
-  </script>
+
+    form.style.display = "none";
+    document.getElementById("discountResult").style.display = "block";
+  });
+</script>
 </body>
 </html>
