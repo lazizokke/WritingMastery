@@ -47,7 +47,7 @@
 
     .title{font-size:clamp(32px,6vw,56px);margin:20px 0 10px;text-align:center}
     .subtitle{font-size:18px;color:var(--muted);text-align:center;max-width:800px;margin:0 auto 24px}
-    .center{display:flex;justify-content:center}
+    .center{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
     .card{background:rgba(255,255,255,.03);border-radius:18px;padding:20px;margin-top:28px}
 
     /* Sharhlar */
@@ -74,6 +74,13 @@
 
     /* Footer */
     .footer{padding:30px 0;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+
+    /* Discount form */
+    #discount form{max-width:400px;margin:20px auto;text-align:left}
+    #discount input[type="text"],
+    #discount input[type="tel"]{width:100%;padding:10px;border-radius:8px;border:none;margin-top:6px;margin-bottom:12px}
+    #discount button{width:100%;padding:12px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4c66ff);color:#fff;font-weight:700;cursor:pointer}
+    #discount .result{margin-top:20px;padding:20px;background:rgba(255,255,255,.05);border-radius:12px;text-align:center}
   </style>
 </head>
 <body>
@@ -100,9 +107,10 @@
 
       <!-- Hero text -->
       <h1 class="title">Writing Mastery</h1>
-      <p class="subtitle">📚 <b>Multilevel imtihoni</b> uchun <b>letter</b> va <b>esse</b> yozishni mukammal o‘rganing. <br> Darslar <b>Telegram</b> orqali o‘tiladi, <b>tajribali ustozlar</b> dars beradi. Narxi: oyiga <b>50 000 so‘m</b>. 🚀</p>
+      <p class="subtitle">📚 <b>Multilevel imtihoni</b> uchun <b>letter</b> va <b>esse</b> yozishni mukammal o‘rganing. <br> Darslar <b>Telegram</b> orqali o‘tiladi, <b>tajribali ustozlar</b> dars beradi. Narxi: oyiga <b>70 000 so‘m</b>. 🚀</p>
       <div class="center" id="join">
         <a class="btn" href="https://t.me/very_busi"><i class="fa-brands fa-telegram"></i> Guruhga qo'shilish</a>
+        <a class="btn" href="#discount">Chegirma olish</a>
       </div>
 
       <!-- Afzalliklar -->
@@ -128,14 +136,6 @@
     </div>
   </section>
 
-  <!-- Qo'shimcha ma'lumot -->
-  <section class="info">
-    <div class="container">
-      <h2>Nega Writing Mastery?</h2>
-      <p>Bu kurs orqali siz yozish tezligingizni oshirasiz, insho va maktub yozishda ishonch hosil qilasiz va Multilevel imtihonida yuqori natijaga erishasiz. 🌟</p>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="faq">
     <div class="container">
@@ -155,11 +155,48 @@
     </div>
   </section>
 
+  <!-- Chegirma olish -->
+  <section id="discount" class="info">
+    <div class="container">
+      <h2>🎁 Chegirma olish</h2>
+       <p>Ma'lumotni to'ldirish orqali chegirma kodini adminga jo'nating va kurs oylik to'loviga 28 foizlik chegirma oling.</p>
+      <form id="discountForm" action="https://formspree.io/f/xpwjaedw" method="POST">
+        <label>Telefon raqamingiz (O'zbekiston):</label>
+        <input type="tel" name="phone" pattern="^\+998[0-9]{9}$" placeholder="+998901234567" required>
+
+        <label>Ism Familiya:</label>
+        <input type="text" name="fullname" required>
+
+        <button type="submit">Chegirma kodini olish</button>
+      </form>
+
+      <div id="discountResult" class="result" style="display:none;">
+        <h3>✅ Sizning chegirma kodingiz: <span id="code">WM2025</span></h3>
+        <p>Kodni adminga yuboring va chegirmaga ega bo‘ling!</p>
+        <a class="btn" href="https://t.me/very_busi">Kursga kirish</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">© <span id="yil"></span> Writing Mastery. Barcha huquqlar himoyalangan.</div>
   </footer>
 
-  <script>document.getElementById('yil').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yil').textContent=new Date().getFullYear();
+
+    // Forma ishlashi
+    const form = document.getElementById('discountForm');
+    const result = document.getElementById('discountResult');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault(); // sahifa yangilanmasin
+      form.style.display="none";
+      result.style.display="block";
+      // ⚠️ Hozircha ma’lumotlar faqat ko‘rsatiladi,
+      // sizga emailga yuborish uchun Formspree ulash kerak bo‘ladi.
+    });
+  </script>
 </body>
 </html>
